@@ -1,4 +1,4 @@
-/*#include <opencv2\core\core.hpp>
+#include <opencv2\core\core.hpp>
 #include <opencv2\highgui\highgui.hpp>
 #include <opencv2\video\video.hpp>
 #include <iostream>
@@ -35,14 +35,24 @@ int main()
    VideoWriter writeR;
 
     //第二个参数说明的是视频的编码形式
+   /*
+      CV_FOURCC('P', 'I', 'M', '1') = MPEG-1 codec
+      CV_FOURCC('M', 'J', 'P', 'G') = motion-jpeg codec
+      CV_FOURCC('M', 'P', '4', '2') = MPEG-4.2 codec 
+      CV_FOURCC('D', 'I', 'V', '3') = MPEG-4.3 codec 
+      CV_FOURCC('D', 'I', 'V', 'X') = MPEG-4 codec 
+      CV_FOURCC('U', '2', '6', '3') = H263 codec 
+      CV_FOURCC('I', '2', '6', '3') = H263I codec 
+      CV_FOURCC('F', 'L', 'V', '1') = FLV1 codec
+   */
 //   writeL.open("L1.avi",-1,r,s,true);
  //  writeR.open("R1.avi",-1,r,s,true);
 
-   writeL.open("L1.avi", -1, 25.0, s, true);
-   writeR.open("R1.avi", -1, 25.0, s, true);
+ //  writeL.open("L1.avi", -1, 25.0, s, true);
+ //  writeR.open("R1.avi", -1, 25.0, s, true);
   
-//	 writeL.open("L1.avi", CV_FOURCC('X', 'V', 'I', 'D'), r, s, true);
-//     writeR.open("R1.avi", CV_FOURCC('X', 'V', 'I', 'D'), r, s, true);
+	 writeL.open("L1.avi",  CV_FOURCC('M', 'J', 'P', 'G'),25.0, s, true);
+     writeR.open("R1.avi",  CV_FOURCC('M', 'J', 'P', 'G'),25.0, s, true);
 
 
 
@@ -95,4 +105,3 @@ int main()
    writeR.release();
 	return 0;
 }
-*/
